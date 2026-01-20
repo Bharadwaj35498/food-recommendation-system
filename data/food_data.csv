@@ -1,0 +1,13 @@
+mood,time_of_day,hunger_level,diet,weather,health_goal,spice_level,food_category
+happy,morning,low,veg,hot,maintenance,low,light meal
+happy,afternoon,high,non-veg,hot,muscle_gain,high,heavy meal
+happy,night,medium,veg,rainy,maintenance,medium,snack
+tired,morning,low,veg,cold,weight_loss,low,light meal
+tired,afternoon,medium,veg,hot,maintenance,medium,snack
+tired,night,high,non-veg,cold,muscle_gain,high,heavy meal
+stressed,morning,low,veg,cold,maintenance,low,light meal
+stressed,afternoon,medium,veg,hot,maintenance,medium,snack
+stressed,night,high,veg,rainy,maintenance,high,comfort food
+sad,morning,low,veg,cold,weight_loss,low,light meal
+sad,afternoon,medium,veg,rainy,maintenance,medium,comfort food
+sad,night,high,non-veg,cold,maintenance,high,comfort food
