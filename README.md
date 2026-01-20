@@ -6,7 +6,7 @@ This project demonstrates practical ML thinking by modeling how humans actually 
 
 ---
 
-## 🚀 Why This Project
+## Why This Project
 People often struggle to decide what to eat, and their choices depend on context rather than fixed preferences.  
 This system mimics real-life decision-making by incorporating multiple contextual factors into the recommendation process.
 
