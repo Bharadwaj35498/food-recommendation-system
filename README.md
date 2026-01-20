@@ -1,4 +1,4 @@
-# 🍽️ Context-Aware Food Recommendation System
+# Context-Aware Food Recommendation System
 
 A human-centric machine learning project that recommends food based on user mood, time of day, hunger level, diet preference, weather conditions, health goals, and spice tolerance.
 
@@ -16,7 +16,7 @@ Example scenarios:
 
 ---
 
-## 🧠 Machine Learning Approach
+## Machine Learning Approach
 
 - Problem Type: Context-aware classification
 - Model: Decision Tree Classifier
@@ -27,7 +27,7 @@ Example scenarios:
 
 ---
 
-## 📊 Features Used
+## Features Used
 
 - Mood (happy, tired, stressed, sad)
 - Time of Day (morning, afternoon, night)
@@ -39,7 +39,7 @@ Example scenarios:
 
 ---
 
-## 🍽️ Output
+## Output
 
 - Food Category:
   - Light meal
@@ -49,7 +49,7 @@ Example scenarios:
 
 ---
 
-## 📈 Dataset Strategy
+## Dataset Strategy
 
 - Initial real dataset was limited
 - Synthetic data was generated using rule-based heuristics to improve training stability
@@ -57,7 +57,7 @@ Example scenarios:
 
 ---
 
-## 🖥️ Application
+## Application
 
 The system is deployed as an interactive Streamlit web application where users can:
 - Select contextual inputs via dropdowns
@@ -66,7 +66,7 @@ The system is deployed as an interactive Streamlit web application where users c
 
 ---
 
-## 🛠️ Tech Stack
+##Tech Stack
 
 - Python
 - Pandas, NumPy
@@ -76,7 +76,7 @@ The system is deployed as an interactive Streamlit web application where users c
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 
 food-recommendation-system/
@@ -97,7 +97,7 @@ food-recommendation-system/
 
 ---
 
-## ▶️ How to Run the Project
+## How to Run the Project
 
 ```bash
 git clone https://github.com/Bharadwaj35498/food-recommendation-system.git
@@ -112,36 +112,3 @@ python src/generate_synthetic_data.py
 python src/train_model.py
 
 streamlit run app.py
-📌 Evaluation Notes
-
-Accuracy varies due to limited real-world data
-
-Focus is on feature engineering, context awareness, and ML workflow design
-
-Model performance would improve with real user data
-
-💼 What This Project Demonstrates
-
-Solving real-life problems using machine learning
-
-Context-aware feature engineering
-
-Handling low-data scenarios
-
-End-to-end ML pipeline development
-
-Model deployment using Streamlit
-
-Clean GitHub project structure
-
-🔮 Future Enhancements
-
-User history-based personalization
-
-Calorie and nutrition estimation
-
-Hybrid rule-based + ML recommendations
-
-REST API deployment
-
-Mobile-friendly interface
