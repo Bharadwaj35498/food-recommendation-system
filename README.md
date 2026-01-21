@@ -1,4 +1,4 @@
-# Context-Aware Food Recommendation System
+#Aware Food Recommendation System
 
 A human-centric machine learning project that recommends food based on user mood, time of day, hunger level, diet preference, weather conditions, health goals, and spice tolerance.
 
