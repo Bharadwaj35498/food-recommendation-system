@@ -1,114 +1,69 @@
-#Aware Food Recommendation System
+Context-Aware Food Recommendation System
 
-A human-centric machine learning project that recommends food based on user mood, time of day, hunger level, diet preference, weather conditions, health goals, and spice tolerance.
+Overview
 
-This project demonstrates practical ML thinking by modeling how humans actually make food choices rather than focusing only on historical data.
+This project is a machine learning based food recommendation system that suggests food categories based on a person’s current context. Instead of relying on past user history, the system focuses on real-world factors that influence daily food decisions, such as mood, time of day, hunger level, weather, diet preference, health goals, and spice tolerance.
 
----
+The goal of this project is to demonstrate practical machine learning concepts through a relatable problem and to build an end-to-end pipeline from data preparation to deployment.
 
-## Why This Project
-People often struggle to decide what to eat, and their choices depend on context rather than fixed preferences.  
-This system mimics real-life decision-making by incorporating multiple contextual factors into the recommendation process.
+Problem Statement
 
-Example scenarios:
-- Stressed + Night + Rainy → Comfort food  
-- Morning + Weight loss goal → Light meal  
+People often find it difficult to decide what to eat, especially when their choices depend on multiple situational factors. Food decisions are rarely random and are usually influenced by emotions, time, and lifestyle preferences. This project attempts to model that decision-making process using machine learning.
 
----
+Approach
 
-## Machine Learning Approach
+The problem is treated as a context-aware classification task. Multiple contextual features are encoded and used as inputs to a machine learning model that predicts an appropriate food category.
 
-- Problem Type: Context-aware classification
-- Model: Decision Tree Classifier
-- Reason for model choice:
-  - Handles categorical features well
-  - Interpretable and explainable
-  - Suitable for small and synthetic datasets
+A Decision Tree classifier is used because it works well with categorical data and provides interpretable decision paths. The model learns relationships between different contexts and food choices.
 
----
+Due to limited availability of real user data, synthetic data is generated using simple rule-based logic that reflects common human food preferences. This helps improve model stability and learning behavior while keeping the system realistic.
 
-## Features Used
+Features Used
 
-- Mood (happy, tired, stressed, sad)
-- Time of Day (morning, afternoon, night)
-- Hunger Level (low, medium, high)
-- Diet Preference (veg / non-veg)
-- Weather (hot, cold, rainy)
-- Health Goal (weight loss, muscle gain, maintenance)
-- Spice Level (low, medium, high)
+The model considers the following contextual features.
 
----
+Mood
+Time of day
+Hunger level
+Diet preference
+Weather conditions
+Health goal
+Spice preference
 
-## Output
+Output
 
-- Food Category:
-  - Light meal
-  - Snack
-  - Heavy meal
-  - Comfort food
+Based on the input context, the system predicts one of the following food categories.
 
----
+Light meal
+Snack
+Heavy meal
+Comfort food
 
-## Dataset Strategy
+Technology Stack
 
-- Initial real dataset was limited
-- Synthetic data was generated using rule-based heuristics to improve training stability
-- Synthetic data is used only for prototyping purposes
+The project is implemented using Python. Data processing and feature engineering are handled using Pandas and NumPy. Machine learning is implemented using scikit-learn. Joblib is used to save and load trained models and encoders. The application is deployed using Streamlit for interactive use. Git and GitHub are used for version control.
 
----
+Project Structure
 
-## Application
+food-recommendation-system
+src
+data
+app.py
+README.md
+requirements.txt
 
-The system is deployed as an interactive Streamlit web application where users can:
-- Select contextual inputs via dropdowns
-- Receive instant food recommendations
-- Experience an end-to-end ML pipeline
+How to Run the Project
 
----
+Clone the repository and navigate to the project directory. Create and activate a virtual environment. Install the required dependencies from the requirements file. Generate the dataset and train the model. Finally, run the Streamlit application to interact with the system.
 
-##Tech Stack
+Evaluation
 
-- Python
-- Pandas, NumPy
-- Scikit-learn
-- Streamlit
-- Git & GitHub
+Model accuracy varies due to the limited size of real-world data and the large number of possible input combinations. The primary focus of this project is on feature engineering, context awareness, and pipeline design rather than achieving high accuracy on a small dataset.
 
----
+Use Case
 
-## Project Structure
+This system can be used as a prototype for meal planning applications, food delivery platforms, or lifestyle recommendation systems. It demonstrates how contextual information can improve personalization in everyday applications.
 
+Future Improvements
 
-food-recommendation-system/
-├── src/
-│ ├── data_preprocessing.py
-│ ├── train_model.py
-│ ├── predict.py
-│ └── generate_synthetic_data.py
-│
-├── data/
-│ └── food_data.csv
-│
-├── app.py
-├── README.md
-├── .gitignore
-└── requirements.txt
-
-
----
-
-## How to Run the Project
-
-```bash
-git clone https://github.com/Bharadwaj35498/food-recommendation-system.git
-cd food-recommendation-system
-
-python -m venv venv
-venv\Scripts\activate   # Windows
-
-pip install -r requirements.txt
-
-python src/generate_synthetic_data.py
-python src/train_model.py
-
-streamlit run app.py
+Future enhancements may include incorporating user history, calorie and nutrition analysis, hybrid rule-based and machine learning approaches, API deployment, and mobile application support.
