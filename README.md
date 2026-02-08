@@ -34,6 +34,11 @@ The model considers the following contextual inputs:
 - Health goal (weight loss, muscle gain, maintenance)
 - Spice preference (low, medium, high)
 
+### Experience highlights
+- Interactive Streamlit dashboard with a context snapshot and recommendation panel.
+- Probability-based confidence view with ranked alternatives for transparency.
+- Built-in explanations describing how the model uses context signals.
+
 ---
 
 ## Output
