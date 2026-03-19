@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🍽️ Smart Food Recommender - AI Powered Meals</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.0.0/dist/chart.min.js"></script>
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="animated-bg">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+        <div class="floating-emoji">🍕</div>
+        <div class="floating-emoji">🍜</div>
+        <div class="floating-emoji">🍱</div>
+        <div class="floating-emoji">🥘</div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-utensils"></i>
+                <span>FoodAI</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#recommender" class="nav-link">Recommender</a></li>
+                <li><a href="#indian-foods" class="nav-link">Indian Foods</a></li>
+                <li><a href="#stats" class="nav-link">Stats</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">
+                <span class="word">What's</span>
+                <span class="word">For</span>
+                <span class="word">Lunch?</span>
+            </h1>
+            <p class="hero-subtitle">AI-powered food recommendations tailored to your mood, time, and preferences</p>
+            <button class="cta-button" onclick="scrollToRecommender()">
+                Get Started
+                <i class="fas fa-arrow-right"></i>
+            </button>
+        </div>
+    </section>
+
+    <!-- Main Recommender Section -->
+    <section id="recommender" class="recommender-section">
+        <div class="container">
+            <h2 class="section-title">
+                <i class="fas fa-magic"></i>
+                Find Your Perfect Meal
+            </h2>
+            
+            <div class="recommender-grid">
+                <!-- Left: Input Form -->
+                <div class="input-panel">
+                    <form id="preferencesForm" class="preferences-form">
+                        <!-- Mood Selection -->
+                        <div class="form-group">
+                            <label>What's your mood?</label>
+                            <div class="mood-selector">
+                                <input type="radio" id="mood-happy" name="mood" value="happy" checked>
+                                <label for="mood-happy" class="mood-btn">😊 Happy</label>
+                                
+                                <input type="radio" id="mood-sad" name="mood" value="sad">
+                                <label for="mood-sad" class="mood-btn">😔 Sad</label>
+                                
+                                <input type="radio" id="mood-stressed" name="mood" value="stressed">
+                                <label for="mood-stressed" class="mood-btn">😰 Stressed</label>
+                                
+                                <input type="radio" id="mood-tired" name="mood" value="tired">
+                                <label for="mood-tired" class="mood-btn">😴 Tired</label>
+                            </div>
+                        </div>
+
+                        <!-- Time of Day -->
+                        <div class="form-group">
+                            <label>When do you want to eat?</label>
+                            <div class="time-selector">
+                                <input type="radio" id="time-morning" name="time_of_day" value="morning">
+                                <label for="time-morning" class="time-btn">🌅 Morning</label>
+                                
+                                <input type="radio" id="time-afternoon" name="time_of_day" value="afternoon" checked>
+                                <label for="time-afternoon" class="time-btn">☀️ Afternoon</label>
+                                
+                                <input type="radio" id="time-night" name="time_of_day" value="night">
+                                <label for="time-night" class="time-btn">🌙 Night</label>
+                            </div>
+                        </div>
+
+                        <!-- Hunger Level -->
+                        <div class="form-group">
+                            <label>Hunger Level</label>
+                            <div class="slider-wrapper">
+                                <input type="range" id="hunger" name="hunger" min="0" max="2" value="1" class="range-input">
+                                <div class="slider-labels">
+                                    <span>Light</span>
+                                    <span>Medium</span>
+                                    <span>Heavy</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Diet Preference -->
+                        <div class="form-group">
+                            <label>Dietary Preference</label>
+                            <div class="diet-selector">
+                                <input type="radio" id="diet-veg" name="diet" value="veg" checked>
+                                <label for="diet-veg" class="diet-btn">🥗 Vegetarian</label>
+                                
+                                <input type="radio" id="diet-non-veg" name="diet" value="non-veg">
+                                <label for="diet-non-veg" class="diet-btn">🍗 Non-Veg</label>
+                            </div>
+                        </div>
+
+                        <!-- Weather -->
+                        <div class="form-group">
+                            <label>Weather Outside</label>
+                            <div class="weather-selector">
+                                <input type="radio" id="weather-hot" name="weather" value="hot" checked>
+                                <label for="weather-hot" class="weather-btn">🔥 Hot</label>
+                                
+                                <input type="radio" id="weather-cold" name="weather" value="cold">
+                                <label for="weather-cold" class="weather-btn">❄️ Cold</label>
+                                
+                                <input type="radio" id="weather-rainy" name="weather" value="rainy">
+                                <label for="weather-rainy" class="weather-btn">🌧️ Rainy</label>
+                            </div>
+                        </div>
+
+                        <!-- Health Goal -->
+                        <div class="form-group">
+                            <label>Health Goal</label>
+                            <div class="goal-selector">
+                                <input type="radio" id="goal-loss" name="goal" value="weight_loss">
+                                <label for="goal-loss" class="goal-btn">⚖️ Weight Loss</label>
+                                
+                                <input type="radio" id="goal-main" name="goal" value="maintenance" checked>
+                                <label for="goal-main" class="goal-btn">💪 Muscle Gain</label>
+                                
+                                <input type="radio" id="goal-gain" name="goal" value="maintenance">
+                                <label for="goal-gain" class="goal-btn">⏸️ Maintenance</label>
+                            </div>
+                        </div>
+
+                        <!-- Spice Level -->
+                        <div class="form-group">
+                            <label>Spice Level</label>
+                            <div class="spice-selector">
+                                <input type="radio" id="spice-low" name="spice" value="low" checked>
+                                <label for="spice-low" class="spice-btn">
+                                    <i class="fas fa-fire"></i> Mild
+                                </label>
+                                
+                                <input type="radio" id="spice-medium" name="spice" value="medium">
+                                <label for="spice-medium" class="spice-btn">
+                                    <i class="fas fa-fire"></i><i class="fas fa-fire"></i> Medium
+                                </label>
+                                
+                                <input type="radio" id="spice-high" name="spice" value="high">
+                                <label for="spice-high" class="spice-btn">
+                                    <i class="fas fa-fire"></i><i class="fas fa-fire"></i><i class="fas fa-fire"></i> Hot
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Description -->
+                        <div class="form-group">
+                            <label>What are you craving? (optional)</label>
+                            <textarea id="description" name="description" placeholder="e.g., Something light and healthy, Traditional Indian curry, etc." class="form-textarea"></textarea>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button type="submit" class="submit-btn" id="submitBtn">
+                            <span>Get Recommendation</span>
+                            <i class="fas fa-bolt"></i>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Right: Recommendation Display -->
+                <div class="result-panel">
+                    <div id="loading" class="loading-state" style="display: none;">
+                        <div class="spinner"></div>
+                        <p>Finding your perfect meal...</p>
+                    </div>
+
+                    <div id="result" class="recommendation-result" style="display: none;">
+                        <!-- Result will be inserted here by JavaScript -->
+                    </div>
+
+                    <div id="empty-state" class="empty-state">
+                        <div class="empty-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <h3>Ready to get a recommendation?</h3>
+                        <p>Fill in your preferences and click "Get Recommendation" to find your perfect meal!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Indian Foods Showcase -->
+    <section id="indian-foods" class="indian-foods-section">
+        <div class="container">
+            <h2 class="section-title">
+                <i class="fas fa-leaf"></i>
+                Indian Cuisine Showcase
+            </h2>
+            <p class="section-subtitle">Explore 30+ authentic Indian dishes in our database</p>
+            
+            <div id="indianFoodsGrid" class="foods-grid">
+                <!-- Grid will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section id="stats" class="stats-section">
+        <div class="container">
+            <h2 class="section-title">
+                <i class="fas fa-chart-pie"></i>
+                System Statistics
+            </h2>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>Total Foods</h3>
+                    <div class="stat-number">48</div>
+                    <p>Diverse dishes across all categories</p>
+                </div>
+                
+                <div class="stat-card">
+                    <h3>Indian Dishes</h3>
+                    <div class="stat-number" id="indianCount">30+</div>
+                    <p>Authentic Indian cuisine options</p>
+                </div>
+                
+                <div class="stat-card">
+                    <h3>Categories</h3>
+                    <div class="stat-number">4</div>
+                    <p>Light, Heavy, Snacks, Comfort</p>
+                </div>
+                
+                <div class="stat-card">
+                    <h3>Cuisines</h3>
+                    <div class="stat-number">2</div>
+                    <p>Indian & Western blended</p>
+                </div>
+            </div>
+
+            <div class="chart-container">
+                <canvas id="cuisineChart"></canvas>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>FoodAI</h4>
+                <p>Smart food recommendations powered by hybrid AI pipelines</p>
+            </div>
+            <div class="footer-section">
+                <h4>Features</h4>
+                <ul>
+                    <li>NLP & Metadata Analysis</li>
+                    <li>Mood-based Recommendations</li>
+                    <li>Indian & Western Cuisine</li>
+                    <li>Real-time Suggestions</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Technology</h4>
+                <ul>
+                    <li>BERT Embeddings</li>
+                    <li>Decision Tree ML</li>
+                    <li>Hybrid Scoring</li>
+                    <li>K-Means Clustering</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 FoodAI. All rights reserved. | Built with <i class="fas fa-heart"></i> for food lovers</p>
+        </div>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast"></div>
+
+    <!-- Scripts -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

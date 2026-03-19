@@ -1,0 +1,73 @@
+╔════════════════════════════════════════════════════════════════════════════════╗
+║                    🍽️  FoodAI - QUICK SHARING GUIDE  🍽️                        ║
+╚════════════════════════════════════════════════════════════════════════════════╝
+
+┌─ SHARE WITH OTHERS ON YOUR WIFI ─────────────────────────────────────────────┐
+│                                                                                 │
+│  STEP 1: Find Your IP Address                                                │
+│  ─────────────────────────────                                               │
+│  Option A: Run this file:                                                    │
+│           get_network_ip.bat                                                 │
+│                                                                                │
+│  Option B: Manual (Windows)                                                  │
+│           1. Press: Windows Key + R                                          │
+│           2. Type:  cmd                                                      │
+│           3. Type:  ipconfig                                                 │
+│           4. Look for "IPv4 Address" (like 192.168.1.100)                   │
+│                                                                                │
+│                                                                                │
+│  STEP 2: Start the Website                                                  │
+│  ────────────────────────                                                   │
+│  1. Open PowerShell/CMD in this folder                                      │
+│  2. Run: python app_web.py                                                  │
+│  3. You'll see console output like:                                         │
+│     LOCAL ACCESS:   http://localhost:5000                                   │
+│     NETWORK ACCESS: http://192.168.1.100:5000  ← Use THIS IP!             │
+│                                                                                │
+│                                                                                │
+│  STEP 3: Share the Link                                                     │
+│  ──────────────────────                                                     │
+│  Send this to any friend on your WiFi:                                     │
+│                                                                                │
+│      📱 http://192.168.1.100:5000                                            │
+│         (Replace 192.168.1.100 with YOUR IP from Step 1!)                   │
+│                                                                                │
+│  They can open it in their phone/laptop browser and use the app!            │
+│                                                                                │
+└─────────────────────────────────────────────────────────────────────────────────┘
+
+
+┌─ FOR WORLDWIDE ACCESS (Internet) ──────────────────────────────────────────────┐
+│                                                                                 │
+│  Use Ngrok (Takes 60 seconds!)                                               │
+│  ──────────────────────────────                                              │
+│  1. Download Ngrok: https://ngrok.com/download                              │
+│  2. Extract it to any folder                                                │
+│  3. Make sure Flask is running (python app_web.py)                          │
+│  4. Open cmd in ngrok folder                                                │
+│  5. Run: ngrok http 5000                                                    │
+│  6. Copy the link (like https://abc123.ngrok.io)                           │
+│  7. Share it - anyone ANYWHERE can access your app!                        │
+│                                                                                │
+│  Example: https://abc123def456.ngrok.io                                    │
+│                                                                                │
+└─────────────────────────────────────────────────────────────────────────────────┘
+
+
+┌─ SUMMARY TABLE ────────────────────────────────────────────────────────────────┐
+│                                                                                 │
+│  Access Type    │ Who Can Access  │ Setup Time │ Cost  │ URL Example          │
+│  ─────────────────────────────────────────────────────────────────────────     │
+│  Local WiFi     │ Same WiFi only  │  2 min    │ Free  │ http://192.168.1.x   │
+│  Ngrok          │ Anyone/Anywhere │  5 min    │ Free  │ https://abc123.ngrok  │
+│  Port Forward   │ Anyone/Anywhere │ 10 min    │ Free  │ http://public-ip      │
+│  Cloud (Heroku) │ Anyone/Anywhere │ 15 min    │ Free  │ https://foodai.heroku │
+│                                                                                 │
+└─────────────────────────────────────────────────────────────────────────────────┘
+
+
+🎯 MOST POPULAR: Local WiFi (casual) + Ngrok (worldwide sharing)
+
+Need help? Check: SHARING_GUIDE.md (full details)
+
+═══════════════════════════════════════════════════════════════════════════════════

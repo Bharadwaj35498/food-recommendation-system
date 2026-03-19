@@ -1,13 +1,47 @@
-mood,time_of_day,hunger_level,diet,weather,health_goal,spice_level,food_category
-happy,morning,low,veg,hot,maintenance,low,light meal
-happy,afternoon,high,non-veg,hot,muscle_gain,high,heavy meal
-happy,night,medium,veg,rainy,maintenance,medium,snack
-tired,morning,low,veg,cold,weight_loss,low,light meal
-tired,afternoon,medium,veg,hot,maintenance,medium,snack
-tired,night,high,non-veg,cold,muscle_gain,high,heavy meal
-stressed,morning,low,veg,cold,maintenance,low,light meal
-stressed,afternoon,medium,veg,hot,maintenance,medium,snack
-stressed,night,high,veg,rainy,maintenance,high,comfort food
-sad,morning,low,veg,cold,weight_loss,low,light meal
-sad,afternoon,medium,veg,rainy,maintenance,medium,comfort food
-sad,night,high,non-veg,cold,maintenance,high,comfort food
+mood,time_of_day,hunger_level,diet,weather,health_goal,spice_level,food_category,food_name,food_description
+happy,morning,low,veg,hot,maintenance,low,light meal,Fruit Salad with Yogurt,Fresh fruit salad with yogurt and granola
+happy,afternoon,high,non-veg,hot,muscle_gain,high,heavy meal,Spicy Grilled Chicken Rice,Grilled chicken with spicy rice and vegetables
+happy,night,medium,veg,rainy,maintenance,medium,snack,Hummus and Pita,Hummus with pita chips and fresh veggies
+tired,morning,low,veg,cold,weight_loss,low,light meal,Berry Oatmeal,Oatmeal with berries and honey
+tired,afternoon,medium,veg,hot,maintenance,medium,snack,Cheese and Crackers,Cheese and crackers with grapes
+tired,night,high,non-veg,cold,muscle_gain,high,heavy meal,Beef Steak with Sides,Beef steak with mashed potatoes
+stressed,morning,low,veg,cold,maintenance,low,light meal,Almond Butter Toast,Toast with almond butter and banana
+stressed,afternoon,medium,veg,hot,maintenance,medium,snack,Mixed Nuts,Mixed nuts and dried fruits
+stressed,night,high,veg,rainy,maintenance,high,comfort food,Creamy Pasta,Creamy pasta with garlic bread
+sad,morning,low,veg,cold,weight_loss,low,light meal,Green Smoothie,Green smoothie with spinach and protein powder
+sad,afternoon,medium,veg,rainy,maintenance,medium,comfort food,Chocolate Cookies,Warm chocolate chip cookies with milk
+sad,night,high,non-veg,cold,maintenance,high,comfort food,Mac and Cheese,Mac and cheese with bacon bits
+happy,morning,medium,non-veg,cold,weight_loss,medium,light meal,Egg White Scramble,Egg white scramble with toast
+tired,morning,high,non-veg,hot,muscle_gain,low,heavy meal,Pancakes with Sausage,Pancakes with turkey sausage
+stressed,afternoon,low,veg,rainy,weight_loss,low,light meal,Green Salad,Salad with light vinaigrette dressing
+sad,afternoon,high,non-veg,hot,muscle_gain,high,heavy meal,Tandoori Chicken Rice,Spicy tandoori chicken with basmati rice
+happy,night,low,veg,cold,maintenance,low,snack,Dark Chocolate Almonds,Dark chocolate with almonds
+tired,night,medium,non-veg,rainy,maintenance,medium,comfort food,Chicken Noodle Soup,Chicken soup with noodles
+stressed,night,low,veg,hot,weight_loss,low,light meal,Steamed Broccoli Rice,Steamed broccoli with brown rice
+sad,morning,high,non-veg,rainy,maintenance,high,heavy meal,Sausage Pepper Breakfast,Sausage and peppers breakfast platter
+happy,afternoon,low,veg,rainy,maintenance,low,snack,Berries with Cream,Fresh berries and whipped cream
+tired,afternoon,high,non-veg,cold,weight_loss,high,heavy meal,Turkey Meatballs,Turkey meatballs with marinara
+stressed,morning,medium,veg,hot,maintenance,medium,snack,Greek Yogurt Granola,Greek yogurt with granola
+sad,night,medium,veg,cold,weight_loss,low,comfort food,Sweet Potato Cinnamon,Sweet potato with cinnamon
+happy,morning,medium,veg,hot,weight_loss,high,light meal,Idli with Sambar,Steamed rice cakes with spiced sambar and chutney
+happy,morning,high,veg,hot,maintenance,high,light meal,Masala Dosa,Crispy crepe with spiced potato filling
+tired,morning,low,veg,hot,weight_loss,low,light meal,Upma with Vegetables,Savory semolina porridge with vegetables
+happy,afternoon,medium,veg,hot,maintenance,medium,snack,Samosa,Crispy fried pastry with spiced potatoes
+stressed,afternoon,low,veg,hot,maintenance,low,snack,Pakora,Golden fried vegetable fritters
+happy,afternoon,medium,veg,rainty,maintenance,medium,snack,Bhel Puri,Puffed rice with chickpeas and tangy chutney
+tired,afternoon,low,veg,hot,maintenance,low,snack,Methi Fafda,Crispy chickpea flour noodles with jaggery
+happy,afternoon,medium,veg,hot,maintenance,high,snack,Chakli,Golden spiral-shaped snack with spices
+stressed,afternoon,medium,veg,hot,maintenance,medium,snack,Masala Peanuts,Roasted peanuts with Indian spices
+happy,night,high,veg,hot,muscle_gain,high,heavy meal,Butter Chicken with Naan,Creamy tomato chicken sauce with naan bread
+happy,night,high,veg,hot,muscle_gain,high,heavy meal,Paneer Tikka Masala,Creamy tomato curry with marinated paneer and rice
+tired,night,high,veg,hot,maintenance,high,heavy meal,Chicken Biryani,Aromatic rice with spiced chicken and saffron
+happy,night,high,veg,muscle_gain,medium,heavy meal,Tandoori Chicken Rice,Spiced tandoori chicken with basmati and raita
+stressed,night,high,veg,hot,muscle_gain,high,heavy meal,Chole Bhature,Spiced chickpea curry with fried bread
+happy,night,high,non-veg,hot,muscle_gain,high,heavy meal,Rogan Josh with Naan,Tender lamb curry with herbs and naan
+happy,night,high,veg,hot,muscle_gain,high,heavy meal,Palak Paneer with Rice,Creamy spinach curry with cottage cheese
+stressed,night,low,veg,cold,weight_loss,low,light meal,Poha,Flattened rice with peanuts and potatoes
+sad,night,high,veg,hot,maintenance,low,comfort food,Khichdi,Soft rice and lentils cooked with mild spices
+sad,night,high,veg,hot,maintenance,medium,comfort food,Dal Makhani,Rich creamy lentil curry with butter and cream
+tired,night,high,veg,hot,maintenance,low,comfort food,Rajma Chawal,Spiced kidney beans with soft rice
+happy,night,high,veg,hot,maintenance,medium,comfort food,Aloo Parathas,Stuffed flatbread with spiced potatoes
+sad,night,medium,veg,hot,maintenance,low,comfort food,Halwa,Warm semolina or carrot dessert with nuts
