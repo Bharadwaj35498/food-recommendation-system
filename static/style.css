@@ -11,6 +11,31 @@
     --danger: #FF6B6B;
     --success: #51CF66;
     --warning: #FFA94D;
+    
+    /* Light theme variables */
+    --bg-primary: #ffffff;
+    --bg-secondary: #f8f9fa;
+    --text-primary: #2C3E50;
+    --text-secondary: #5a6c7d;
+    --border-color: #e0e0e0;
+    --card-bg: #fff;
+    --input-bg: #f5f5f5;
+    --input-border: #ddd;
+    --navbar-bg: rgba(255, 255, 255, 0.95);
+    --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+html[data-theme="dark"] {
+    --bg-primary: #1a1a1a;
+    --bg-secondary: #2d2d2d;
+    --text-primary: #e0e0e0;
+    --text-secondary: #b0b0b0;
+    --border-color: #444;
+    --card-bg: #2d2d2d;
+    --input-bg: #3a3a3a;
+    --input-border: #555;
+    --navbar-bg: rgba(26, 26, 26, 0.95);
+    --shadow-color: rgba(0, 0, 0, 0.5);
 }
 
 * {
@@ -25,9 +50,10 @@ html {
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #fff;
-    color: var(--dark);
+    background: var(--bg-primary);
+    color: var(--text-primary);
     overflow-x: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* ============================================================
@@ -149,6 +175,46 @@ body {
     }
 }
 
+@keyframes reveal {
+    0% {
+        opacity: 0;
+        transform: scale(0.95) translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes shimmer {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
 /* ============================================================
    ANIMATED BACKGROUND
    ============================================================ */
@@ -234,13 +300,14 @@ body {
    ============================================================ */
 
 .navbar {
-    background: rgba(255, 255, 255, 0.95);
+    background: var(--navbar-bg);
     backdrop-filter: blur(10px);
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 20px var(--shadow-color);
     position: sticky;
     top: 0;
     z-index: 100;
     animation: fadeInDown 0.8s ease;
+    border-bottom: 1px solid var(--border-color);
 }
 
 .nav-container {
@@ -270,10 +337,11 @@ body {
     display: flex;
     gap: 3rem;
     list-style: none;
+    align-items: center;
 }
 
 .nav-link {
-    color: var(--dark);
+    color: var(--text-primary);
     text-decoration: none;
     font-weight: 500;
     position: relative;
@@ -297,6 +365,27 @@ body {
 
 .nav-link:hover::after {
     width: 100%;
+}
+
+.theme-toggle {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-primary);
+    transition: transform 0.3s ease, color 0.3s ease;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+}
+
+.theme-toggle:hover {
+    color: var(--primary);
+    transform: rotate(20deg);
 }
 
 /* ============================================================
@@ -359,7 +448,7 @@ body {
     font-size: 1.1rem;
     font-weight: 600;
     background: linear-gradient(135deg, var(--accent), #FFD93D);
-    color: var(--dark);
+    color: #2C3E50;
     border: none;
     border-radius: 50px;
     cursor: pointer;
@@ -371,6 +460,10 @@ body {
 .cta-button:hover {
     transform: translateY(-3px);
     box-shadow: 0 15px 40px rgba(255, 230, 109, 0.6);
+}
+
+html[data-theme="dark"] .cta-button {
+    color: #1a1a1a;
 }
 
 .cta-button:active {
@@ -402,7 +495,7 @@ section {
 
 .section-subtitle {
     font-size: 1.2rem;
-    color: #666;
+    color: var(--text-secondary);
     margin-bottom: 3rem;
     animation: fadeInUp 1s ease;
 }
@@ -412,8 +505,9 @@ section {
    ============================================================ */
 
 .recommender-section {
-    background: white;
+    background: var(--bg-primary);
     z-index: 1;
+    transition: background-color 0.3s ease;
 }
 
 .recommender-grid {
@@ -429,11 +523,13 @@ section {
    ============================================================ */
 
 .input-panel {
-    background: white;
+    background: var(--card-bg);
     border-radius: 20px;
     padding: 2.5rem;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 20px 60px var(--shadow-color);
     animation: slideInLeft 1s ease;
+    border: 1px solid var(--border-color);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .preferences-form {
@@ -451,7 +547,7 @@ section {
     font-weight: 600;
     font-size: 1rem;
     margin-bottom: 1rem;
-    color: var(--dark);
+    color: var(--text-primary);
 }
 
 /* ============================================================
@@ -493,6 +589,18 @@ section {
     transition: all 0.3s ease;
     text-align: center;
     font-size: 0.9rem;
+    color: var(--text-primary);
+}
+
+html[data-theme="dark"] .mood-btn,
+html[data-theme="dark"] .time-btn,
+html[data-theme="dark"] .diet-btn,
+html[data-theme="dark"] .weather-btn,
+html[data-theme="dark"] .goal-btn,
+html[data-theme="dark"] .spice-btn {
+    background: linear-gradient(135deg, #444 0%, #555 100%);
+    color: var(--text-primary);
+    border-color: var(--border-color);
 }
 
 .mood-btn:hover,
@@ -502,7 +610,7 @@ section {
 .goal-btn:hover,
 .spice-btn:hover {
     transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 20px var(--shadow-color);
 }
 
 input[type="radio"]:checked + .mood-btn,
@@ -577,13 +685,15 @@ input[type="radio"]:checked + .spice-btn {
 .form-textarea {
     width: 100%;
     padding: 1rem;
-    border: 2px solid #e0e0e0;
+    border: 2px solid var(--input-border);
     border-radius: 10px;
     font-family: inherit;
     font-size: 1rem;
     resize: vertical;
     min-height: 100px;
     transition: all 0.3s ease;
+    background: var(--input-bg);
+    color: var(--text-primary);
 }
 
 .form-textarea:focus {
@@ -634,20 +744,22 @@ input[type="radio"]:checked + .spice-btn {
    ============================================================ */
 
 .result-panel {
-    background: white;
+    background: var(--card-bg);
     border-radius: 20px;
     padding: 2.5rem;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 20px 60px var(--shadow-color);
     min-height: 500px;
     display: flex;
     align-items: center;
     justify-content: center;
     animation: slideInRight 1s ease;
+    border: 1px solid var(--border-color);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .empty-state {
     text-align: center;
-    color: #999;
+    color: var(--text-secondary);
     animation: fadeInUp 0.8s ease;
 }
 
@@ -675,7 +787,7 @@ input[type="radio"]:checked + .spice-btn {
 .spinner {
     width: 60px;
     height: 60px;
-    border: 4px solid rgba(255, 107, 107, 0.2);
+    border: 4px solid var(--border-color);
     border-top: 4px solid var(--primary);
     border-radius: 50%;
     animation: spin 1s linear infinite;
@@ -684,7 +796,7 @@ input[type="radio"]:checked + .spice-btn {
 
 .loading-state p {
     font-size: 1.1rem;
-    color: var(--dark);
+    color: var(--text-primary);
 }
 
 /* ============================================================
@@ -801,7 +913,8 @@ input[type="radio"]:checked + .spice-btn {
    ============================================================ */
 
 .indian-foods-section {
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    background: var(--bg-secondary);
+    transition: background-color 0.3s ease;
 }
 
 .foods-grid {
@@ -812,18 +925,19 @@ input[type="radio"]:checked + .spice-btn {
 }
 
 .food-card {
-    background: white;
+    background: var(--card-bg);
     border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 10px 25px var(--shadow-color);
     transition: all 0.3s ease;
     animation: fadeInUp 0.8s ease;
     cursor: pointer;
+    border: 1px solid var(--border-color);
 }
 
 .food-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 20px 40px var(--shadow-color);
 }
 
 .food-card-header {
@@ -843,12 +957,12 @@ input[type="radio"]:checked + .spice-btn {
     font-size: 1.2rem;
     margin-bottom: 0.5rem;
     font-weight: 700;
-    color: var(--dark);
+    color: var(--text-primary);
 }
 
 .food-card-content p {
     font-size: 0.9rem;
-    color: #666;
+    color: var(--text-secondary);
     line-height: 1.4;
     margin-bottom: 1rem;
 }
@@ -913,11 +1027,11 @@ input[type="radio"]:checked + .spice-btn {
 }
 
 .stat-card {
-    background: linear-gradient(135deg, rgba(255, 107, 107, 0.1), rgba(78, 205, 196, 0.1));
+    background: var(--card-bg);
     padding: 2rem;
     border-radius: 15px;
     text-align: center;
-    border: 2px solid transparent;
+    border: 2px solid var(--border-color);
     transition: all 0.3s ease;
     animation: fadeInUp 0.8s ease;
 }
@@ -925,12 +1039,12 @@ input[type="radio"]:checked + .spice-btn {
 .stat-card:hover {
     border-color: var(--primary);
     transform: translateY(-5px);
-    box-shadow: 0 15px 35px rgba(255, 107, 107, 0.2);
+    box-shadow: 0 15px 35px var(--shadow-color);
 }
 
 .stat-card h3 {
     font-size: 1rem;
-    color: #666;
+    color: var(--text-secondary);
     margin-bottom: 0.5rem;
 }
 
@@ -946,17 +1060,19 @@ input[type="radio"]:checked + .spice-btn {
 
 .stat-card p {
     font-size: 0.9rem;
-    color: #999;
+    color: var(--text-secondary);
 }
 
 .chart-container {
-    background: white;
+    background: var(--card-bg);
     padding: 2rem;
     border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 10px 30px var(--shadow-color);
     max-width: 500px;
     margin: 0 auto;
     animation: fadeInUp 1s ease;
+    border: 1px solid var(--border-color);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 /* ============================================================
@@ -964,7 +1080,7 @@ input[type="radio"]:checked + .spice-btn {
    ============================================================ */
 
 .footer {
-    background: linear-gradient(135deg, var(--dark), #1a252f);
+    background: var(--dark);
     color: white;
     padding: 4rem 0 1rem;
     margin-top: 5rem;
@@ -1031,14 +1147,185 @@ input[type="radio"]:checked + .spice-btn {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     opacity: 0;
     transform: translateY(100px);
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
     z-index: 1000;
     font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    max-width: 400px;
 }
 
 .toast.show {
     opacity: 1;
     transform: translateY(0);
+    animation: slideUp 0.3s ease;
+}
+
+.toast.success {
+    background: linear-gradient(135deg, var(--success), #2ecc71);
+}
+
+.toast.error {
+    background: linear-gradient(135deg, var(--danger), #e74c3c);
+}
+
+.toast::before {
+    content: '';
+    display: block;
+    width: 3px;
+    height: 20px;
+    background: white;
+    border-radius: 2px;
+    opacity: 0.8;
+}
+
+/* ============================================================
+   ENHANCED INTERACTIVE ANIMATIONS
+   ============================================================ */
+
+.animate-reveal {
+    animation: reveal 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.hover-lift {
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.hover-lift:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.animate-in {
+    animation: slideUp 0.6s ease forwards !important;
+}
+
+.food-card-main {
+    position: relative;
+    overflow: hidden;
+}
+
+.food-card-emoji {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    animation: bounce 0.6s ease;
+}
+
+.food-description {
+    font-size: 1rem;
+    line-height: 1.6;
+    opacity: 0.95;
+}
+
+.confidence-section {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.confidence-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.8rem;
+    font-weight: 600;
+}
+
+.confidence-percentage {
+    font-size: 1.5rem;
+    font-weight: 900;
+    animation: slideUp 0.6s ease;
+}
+
+.confidence-fill {
+    transition: width 1s cubic-bezier(0.34, 1.56, 0.64, 1);
+    background: rgba(255, 255, 255, 0.9);
+    position: relative;
+}
+
+.confidence-fill::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+    animation: shimmer 2s infinite;
+}
+
+.alternative-item {
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    position: relative;
+    border-left: 3px solid transparent;
+}
+
+.alternative-item:hover {
+    border-left-color: var(--primary);
+}
+
+.alt-info {
+    flex: 1;
+}
+
+.alt-meta {
+    font-size: 0.85rem;
+    color: #666;
+    margin-top: 0.3rem;
+}
+
+.alt-percent {
+    display: inline-block;
+    animation: slideUp 0.6s ease;
+}
+
+/* ============================================================
+   BUTTON & FORM INTERACTIONS
+   ============================================================ */
+
+.submit-btn {
+    position: relative;
+    overflow: hidden;
+}
+
+.submit-btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.submit-btn:active::before {
+    width: 300px;
+    height: 300px;
+}
+
+.submit-btn:disabled {
+    cursor: not-allowed;
+}
+
+/* ============================================================
+   SLIDER STYLING
+   ============================================================ */
+
+.range-input::-webkit-slider-runnable-track {
+    height: 8px;
+    border-radius: 5px;
+    background: linear-gradient(to right, #FF6B6B, #4ECDC4, #FFE66D);
+}
+
+.range-input::-moz-range-track {
+    height: 8px;
+    border-radius: 5px;
+    background: linear-gradient(to right, #FF6B6B, #4ECDC4, #FFE66D);
+    border: none;
 }
 
 /* ============================================================

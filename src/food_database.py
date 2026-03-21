@@ -417,6 +417,378 @@ FOOD_SUGGESTIONS = {
                 "veg": True,
                 "cuisine": "Indian",
                 "best_for": ["night", "sad"]
+            },
+            {
+                "name": "Tomato Soup with Grilled Cheese",
+                "description": "Creamy tomato soup paired with crispy grilled cheese sandwich",
+                "prep_time": "15 min",
+                "calories": "400-480",
+                "veg": True,
+                "cuisine": "Western",
+                "best_for": ["night", "sad", "stressed", "cold"]
+            },
+            {
+                "name": "Gajar ka Halwa (Carrot Dessert)",
+                "description": "Grated carrots cooked with condensed milk, ghee, and dried fruits",
+                "prep_time": "30 min",
+                "calories": "280-320",
+                "veg": True,
+                "cuisine": "Indian",
+                "best_for": ["night", "happy", "sad"]
+            }
+        ]
+    },
+    
+    "healthy bowl": {
+        "foods": [
+            {
+                "name": "Buddha Bowl",
+                "description": "Quinoa, roasted vegetables, chickpeas, tahini dressing, fresh greens",
+                "prep_time": "20 min",
+                "calories": "350-420",
+                "veg": True,
+                "cuisine": "Western",
+                "best_for": ["lunch", "weight_loss", "energetic"]
+            },
+            {
+                "name": "Mediterranean Salad",
+                "description": "Fresh vegetables, feta cheese, olives, olive oil, lemon dressing",
+                "prep_time": "10 min",
+                "calories": "280-340",
+                "veg": True,
+                "cuisine": "Western",
+                "best_for": ["lunch", "weight_loss", "happy"]
+            },
+            {
+                "name": "Veggie Stir Fry Bowl",
+                "description": "Mixed vegetables stir-fried with brown rice and teriyaki sauce",
+                "prep_time": "20 min",
+                "calories": "350-400",
+                "veg": True,
+                "cuisine": "Asian",
+                "best_for": ["lunch", "weight_loss", "energetic"]
+            },
+            {
+                "name": "Chicken Quinoa Bowl",
+                "description": "Grilled chicken, quinoa, roasted veggies, avocado, lime dressing",
+                "prep_time": "25 min",
+                "calories": "420-500",
+                "veg": False,
+                "cuisine": "Western",
+                "best_for": ["lunch", "muscle_gain", "energetic"]
+            },
+            {
+                "name": "Poke Bowl",
+                "description": "Marinated tuna, sushi rice, edamame, cucumber, seaweed, spicy mayo",
+                "prep_time": "15 min",
+                "calories": "380-450",
+                "veg": False,
+                "cuisine": "Asian",
+                "best_for": ["lunch", "energetic", "happy"]
+            },
+            {
+                "name": "Chickpea Tahini Bowl",
+                "description": "Roasted chickpeas, sweet potato, kale, tahini dressing",
+                "prep_time": "30 min",
+                "calories": "380-440",
+                "veg": True,
+                "cuisine": "Western",
+                "best_for": ["lunch", "weight_loss", "energetic"]
+            }
+        ]
+    },
+    
+    "fast food": {
+        "foods": [
+            {
+                "name": "Veggie Burger",
+                "description": "Plant-based patty with lettuce, tomato, onion, special sauce on bun",
+                "prep_time": "8 min",
+                "calories": "400-480",
+                "veg": True,
+                "cuisine": "Western",
+                "best_for": ["afternoon", "weight_loss"]
+            },
+            {
+                "name": "Pepperoni Pizza",
+                "description": "Classic cheese pizza with pepperoni, fresh basil, olive oil",
+                "prep_time": "15 min",
+                "calories": "550-650",
+                "veg": False,
+                "cuisine": "Western",
+                "best_for": ["lunch", "happy", "stressed"]
+            },
+            {
+                "name": "Spicy Indian Wrap",
+                "description": "Whole wheat wrap with tandoori paneer, cucumber, pickled onions",
+                "prep_time": "10 min",
+                "calories": "380-450",
+                "veg": True,
+                "cuisine": "Indian",
+                "best_for": ["lunch", "energetic"]
+            },
+            {
+                "name": "Chicken Shawarma",
+                "description": "Marinated chicken in pita bread with garlic sauce and vegetables",
+                "prep_time": "20 min",
+                "calories": "450-550",
+                "veg": False,
+                "cuisine": "Middle Eastern",
+                "best_for": ["lunch", "muscle_gain", "happy"]
+            },
+            {
+                "name": "Fish and Chips",
+                "description": "Crispy battered fish with golden fries and tartar sauce",
+                "prep_time": "20 min",
+                "calories": "550-650",
+                "veg": False,
+                "cuisine": "Western",
+                "best_for": ["lunch", "happy"]
+            },
+            {
+                "name": "Veggie Samosa Wrap",
+                "description": "Crispy samosa filling in soft flour wrap with mint chutney",
+                "prep_time": "12 min",
+                "calories": "340-420",
+                "veg": True,
+                "cuisine": "Indian",
+                "best_for": ["afternoon", "stressed"]
+            }
+        ]
+    },
+    
+    "breakfast": {
+        "foods": [
+            {
+                "name": "Chocolate Chip Pancakes",
+                "description": "Fluffy pancakes with melted chocolate chips, syrup, butter",
+                "prep_time": "15 min",
+                "calories": "480-560",
+                "veg": True,
+                "cuisine": "Western",
+                "best_for": ["morning", "happy"]
+            },
+            {
+                "name": "Veggie Omelette",
+                "description": "Fluffy omelette with bell peppers, mushrooms, cheese, toast",
+                "prep_time": "10 min",
+                "calories": "350-420",
+                "veg": True,
+                "cuisine": "Western",
+                "best_for": ["morning", "muscle_gain"]
+            },
+            {
+                "name": "Shakshuka",
+                "description": "Eggs poached in spiced tomato sauce with bread for dipping",
+                "prep_time": "15 min",
+                "calories": "320-380",
+                "veg": True,
+                "cuisine": "Middle Eastern",
+                "best_for": ["morning", "energetic"]
+            },
+            {
+                "name": "Chia Pudding",
+                "description": "Chia seeds soaked in milk, topped with berries and coconut",
+                "prep_time": "10 min",
+                "calories": "280-340",
+                "veg": True,
+                "cuisine": "Western",
+                "best_for": ["morning", "weight_loss", "energetic"]
+            },
+            {
+                "name": "French Toast",
+                "description": "Egg battered bread fried golden, topped with berries and cream",
+                "prep_time": "12 min",
+                "calories": "420-500",
+                "veg": True,
+                "cuisine": "Western",
+                "best_for": ["morning", "happy"]
+            },
+            {
+                "name": "Gobi Paratha with Curd",
+                "description": "Cauliflower stuffed flatbread served with yogurt and butter",
+                "prep_time": "25 min",
+                "calories": "380-440",
+                "veg": True,
+                "cuisine": "Indian",
+                "best_for": ["morning", "energetic"]
+            }
+        ]
+    },
+    
+    "dessert": {
+        "foods": [
+            {
+                "name": "Chocolate Lava Cake",
+                "description": "Warm chocolate cake with melting center, vanilla ice cream",
+                "prep_time": "20 min",
+                "calories": "450-520",
+                "veg": True,
+                "cuisine": "Western",
+                "best_for": ["evening", "happy", "sad"]
+            },
+            {
+                "name": "Mango Kulfi",
+                "description": "Traditional Indian ice cream cone with concentrated mango flavor",
+                "prep_time": "5 min",
+                "calories": "180-220",
+                "veg": True,
+                "cuisine": "Indian",
+                "best_for": ["afternoon", "happy", "summer"]
+            },
+            {
+                "name": "Tiramisu",
+                "description": "Italian dessert with mascarpone, espresso, cocoa powder",
+                "prep_time": "15 min",
+                "calories": "380-450",
+                "veg": True,
+                "cuisine": "Western",
+                "best_for": ["evening", "happy"]
+            },
+            {
+                "name": "Gulab Jamun",
+                "description": "Soft milk solids fried and soaked in rose-flavored sugar syrup",
+                "prep_time": "30 min",
+                "calories": "280-340",
+                "veg": True,
+                "cuisine": "Indian",
+                "best_for": ["evening", "happy", "sad"]
+            },
+            {
+                "name": "Cheesecake",
+                "description": "Creamy NY style cheesecake with graham cracker crust",
+                "prep_time": "15 min",
+                "calories": "480-560",
+                "veg": True,
+                "cuisine": "Western",
+                "best_for": ["evening", "happy"]
+            },
+            {
+                "name": "Kheer (Rice Pudding)",
+                "description": "Ground rice cooked in milk with cardamom, nuts, and raisins",
+                "prep_time": "25 min",
+                "calories": "240-300",
+                "veg": True,
+                "cuisine": "Indian",
+                "best_for": ["evening", "happy", "sad"]
+            }
+        ]
+    },
+    
+    "seafood": {
+        "foods": [
+            {
+                "name": "Grilled Salmon",
+                "description": "Herb-crusted salmon fillets with lemon, asparagus, brown rice",
+                "prep_time": "20 min",
+                "calories": "420-500",
+                "veg": False,
+                "cuisine": "Western",
+                "best_for": ["dinner", "muscle_gain", "weight_loss"]
+            },
+            {
+                "name": "Shrimp Fried Rice",
+                "description": "Stir-fried rice with shrimp, vegetables, soy sauce, egg",
+                "prep_time": "15 min",
+                "calories": "380-450",
+                "veg": False,
+                "cuisine": "Asian",
+                "best_for": ["lunch", "energetic", "happy"]
+            },
+            {
+                "name": "Fish Curry",
+                "description": "Fresh fish in spiced coconut curry with rice",
+                "prep_time": "25 min",
+                "calories": "350-420",
+                "veg": False,
+                "cuisine": "Indian",
+                "best_for": ["lunch", "happy"]
+            },
+            {
+                "name": "Prawns Masala",
+                "description": "Large prawns in creamy tomato-based spiced masala with naan",
+                "prep_time": "20 min",
+                "calories": "380-460",
+                "veg": False,
+                "cuisine": "Indian",
+                "best_for": ["dinner", "muscle_gain", "happy"]
+            },
+            {
+                "name": "Garlic Fish Fillet",
+                "description": "Pan-fried fish with garlic, herbs, lemon butter sauce",
+                "prep_time": "15 min",
+                "calories": "320-380",
+                "veg": False,
+                "cuisine": "Western",
+                "best_for": ["dinner", "weight_loss", "energetic"]
+            },
+            {
+                "name": "Clam Pasta",
+                "description": "Fresh clams in white wine garlic sauce over pasta",
+                "prep_time": "20 min",
+                "calories": "420-500",
+                "veg": False,
+                "cuisine": "Western",
+                "best_for": ["dinner", "happy"]
+            }
+        ]
+    },
+    
+    "vegetarian specials": {
+        "foods": [
+            {
+                "name": "Beet and Goat Cheese Salad",
+                "description": "Roasted beets, goat cheese, walnuts, arugula, balsamic vinaigrette",
+                "prep_time": "15 min",
+                "calories": "320-380",
+                "veg": True,
+                "cuisine": "Western",
+                "best_for": ["lunch", "weight_loss", "happy"]
+            },
+            {
+                "name": "Mushroom Risotto",
+                "description": "Creamy arborio rice with wild mushrooms, parmesan, truffle oil",
+                "prep_time": "30 min",
+                "calories": "480-560",
+                "veg": True,
+                "cuisine": "Western",
+                "best_for": ["dinner", "happy", "stressed"]
+            },
+            {
+                "name": "Chana Masala",
+                "description": "Chickpea curry with tomato base, served with rice or bread",
+                "prep_time": "25 min",
+                "calories": "320-380",
+                "veg": True,
+                "cuisine": "Indian",
+                "best_for": ["lunch", "weight_loss", "muscle_gain"]
+            },
+            {
+                "name": "Baingan Bharta",
+                "description": "Roasted eggplant mashed with spices, onions, tomatoes",
+                "prep_time": "30 min",
+                "calories": "200-260",
+                "veg": True,
+                "cuisine": "Indian",
+                "best_for": ["dinner", "weight_loss"]
+            },
+            {
+                "name": "Vegetable Biryani",
+                "description": "Fragrant basmati rice with mixed vegetables, saffron, rose water",
+                "prep_time": "40 min",
+                "calories": "400-480",
+                "veg": True,
+                "cuisine": "Indian",
+                "best_for": ["lunch", "happy", "celebration"]
+            },
+            {
+                "name": "Stuffed Bell Peppers",
+                "description": "Bell peppers filled with quinoa, vegetables, herbs, baked",
+                "prep_time": "35 min",
+                "calories": "340-410",
+                "veg": True,
+                "cuisine": "Western",
+                "best_for": ["dinner", "weight_loss", "healthy"]
             }
         ]
     }
